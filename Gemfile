@@ -3,6 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.3"
 
+# biblioteca que facilita a filtragem das informações
+gem 'ransack'
+
+# faz a integração para que nossa API seja chamada pelo Frontend
+gem 'rack-cors'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
