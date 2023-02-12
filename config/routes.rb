@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  scope '/api', defaults: { format: :json }
+  scope '/api', defaults: { format: :json } do 
+    resources :categories
+  end
 end
