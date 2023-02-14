@@ -14,4 +14,8 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
 
+  def filter_by_query
+    
+  end
+
 end
