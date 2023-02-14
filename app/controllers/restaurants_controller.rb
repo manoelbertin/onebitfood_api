@@ -5,6 +5,7 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
     #filter_by_query if params[:q]
     filter_by_city if params[:city]
+    filter_by_category if params[:category]
   end
 
   def show
@@ -22,6 +23,12 @@ class RestaurantsController < ApplicationController
 
   def filter_by_city
     @restaurants = @restaurants.where(city: params[:city])
+  end
+
+  def filter_by_category
+    @restaurants = @restaurants.select do |r|
+      r.category.title == params[:category]
+    end
   end
 
 end
