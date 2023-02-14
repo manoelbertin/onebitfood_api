@@ -3,7 +3,8 @@ class RestaurantsController < ApplicationController
   
   def index
     @restaurants = Restaurant.all
-    filter_by_query if params[:q]
+    #filter_by_query if params[:q]
+    filter_by_city if params[:city]
   end
 
   def show
@@ -17,6 +18,10 @@ class RestaurantsController < ApplicationController
 
   def filter_by_query
     @restaurants = @restaurants.ransack(name_or_description_cont: params[:q]).result
+  end
+
+  def filter_by_city
+    @restaurants = @restaurants.where(city: params[:city])
   end
 
 end
