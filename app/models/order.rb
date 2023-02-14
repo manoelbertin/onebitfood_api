@@ -14,5 +14,7 @@ class Order < ApplicationRecord
     final_price = 0
     order_products.each do |op|
       final_price += op.quantity * op.product.price 
+    end
+    self.total_value = final_price + self.restaurant.delivery_tax
   end
 end
