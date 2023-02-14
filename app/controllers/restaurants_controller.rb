@@ -3,6 +3,7 @@ class RestaurantsController < ApplicationController
   
   def index
     @restaurants = Restaurant.all
+    filter_by_query if params[:q]
   end
 
   def show
