@@ -15,7 +15,7 @@ class RestaurantsController < ApplicationController
   end
 
   def filter_by_query
-    
+    @restaurants = @restaurants.ransack(name_or_description_cont: params[:q]).result
   end
 
 end
