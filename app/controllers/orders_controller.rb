@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
       render json: @order, status: :created
     else
       render json: order.errors, status: :unprocessable_entity
+    end
   end
 
   def show 
