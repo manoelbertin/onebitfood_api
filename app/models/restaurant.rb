@@ -1,4 +1,6 @@
 class Restaurant < ApplicationRecord
+  include NameSearchable
+
   belongs_to :category
 
   has_many :product_categories
