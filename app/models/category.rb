@@ -1,6 +1,4 @@
 class Category < ApplicationRecord
-  include NameSearchable
-  
   has_many :restaurants
 
   validates :title, presence: true
