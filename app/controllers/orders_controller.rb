@@ -1,10 +1,14 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: :show
   
+  def index
+    render json: @orders = Order.all.order(:id)
+  end
+  
   def create
     @order = Order.new(order_params)
     if @order.save
-      @order
+      render json: @order, status: :created
     else
       render json: @order.errors, status: :unprocessable_entity
     end
