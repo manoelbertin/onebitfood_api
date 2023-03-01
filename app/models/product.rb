@@ -4,7 +4,9 @@ class Product < ApplicationRecord
 
   has_many :order_products
 
-  validates :name, :price, presence: true
+  validates :name, presence: true#, uniqueness: { case_sensitive: false }
+  validates :description, presence: true
+  validates :price, presence: true, numericality: { greater_than: 0 }
 
   has_one_attached :image
 end
