@@ -12,7 +12,15 @@ class Restaurant < ApplicationRecord
   has_many :product_categories
   has_many :orders
 
-  validates :name, :delivery_tax, :city, :neighborhood, :street, :number, presence: true
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :delivery_tax, presence: true
+  validates :state, presence: true
+  validates :city, presence: true
+  validates :neighborhood, presence: true
+  validates :street, presence: true
+  validates :number, presence: true
+  validates :complement, presence: true
 
   has_one_attached :image
 end
